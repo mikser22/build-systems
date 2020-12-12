@@ -18,8 +18,8 @@ set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
 
 add_custom_target( RunGenerator DEPENDS ${PROJECT_SOURCE_DIR}/A/index.h COMMENT "Checking if re-generation is required" )
 
+include_directories(${PROJECT_SOURCE_DIR} "A")
 add_subdirectory(${PROJECT_SOURCE_DIR}/B ${PROJECT_SOURCE_DIR}/B/build)
-
 add_executable(C ${SOURCES})
 add_dependencies( C RunGenerator )
 
